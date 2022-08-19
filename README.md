@@ -13,7 +13,7 @@ The bug goes like this:
 
 The result looks a bit like this:
 
-```
+```console
 $ python setup.py --name
 /Users/benno/.pyenv/versions/setuptools-name-bug/lib/python3.10/site-packages/setuptools/config/pyprojecttoml.py:108: _BetaConfiguration: Support for `[tool.setuptools]` in `pyproject.toml` is still *beta*.
   warnings.warn(msg, _BetaConfiguration)
@@ -44,4 +44,4 @@ You can see the method in question [here](https://github.com/pypa/setuptools/blo
 
 The first line seems to be correct, but the second seems to be erroneous and ends up sticking the distribution name (a string) on to the `Distribution` object which expects it to be an integer later on in the command line processing gubbins.
 
-This fix appears to be to simply remove the second line. This will be filed as an issue and a PR raised, and this will be updated accordingly with the details of these.
+This fix appears to be to simply remove the second line. This has been filed as [Issue 3545](https://github.com/pypa/setuptools/issues/3545).
