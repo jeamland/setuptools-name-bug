@@ -44,4 +44,4 @@ You can see the method in question [here](https://github.com/pypa/setuptools/blo
 
 The first line seems to be correct, but the second seems to be erroneous and ends up sticking the distribution name (a string) on to the `Distribution` object which expects it to be an integer later on in the command line processing gubbins.
 
-This fix appears to be to simply remove the second line. This has been filed as [Issue 3545](https://github.com/pypa/setuptools/issues/3545).
+This fix appears to be to simply remove the second line. This has been filed as [issue 3545](https://github.com/pypa/setuptools/issues/3545) and a change submitted as [PR 3547](https://github.com/pypa/setuptools/pull/3547).
